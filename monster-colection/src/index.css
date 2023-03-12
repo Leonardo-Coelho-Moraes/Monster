@@ -1,0 +1,151 @@
+
+@font-face {
+  font-family: 'Mon';
+  src: url(Green_Energy.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;}
+
+body{
+  background: #151515;
+  color: white;
+  min-height: 100vh;
+
+}
+header{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin-bottom: 150px;
+}
+header>h1{
+  font: 500 normal 2.5em/1.5em Mon;
+  -webkit-text-stroke: 0.6px #51b045;
+}
+section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 240px;
+  align-items: center;
+  background: #151515;
+}
+.card{
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+
+  border-radius: 20px;
+}
+.card:hover{
+  width: 600px;
+  transition-delay: 0.5s;
+}
+.card .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  background: #191919;
+  border: 8px solid var(--clr);
+  filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+  transition:  0.5s, background 0.5s;
+  transition-delay: 0.75s,1s;
+}
+.card:hover .circle::before{
+  transition-delay: 0.5s;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+}
+.card .circle .logo{
+  position: relative; 
+  align-self: center;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.card:hover .circle .logo{
+  transform: scale(0);
+  transition-delay: 0s;
+}
+.card .product_img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0) rotate(315deg);
+  height: 450px;
+  transition: 0.5s ease-in-out;
+}
+.card:hover .product_img{
+  transition-delay: 0.75s;
+  top: 25%;
+  left: 82%;
+  transform: translate(-50%,-50%) scale(1) rotate(15deg);
+}
+ .card .content{
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  padding: 10px 10px 10px 40px;
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+ }
+ .card:hover .content{
+  transition-delay: 0.75s;
+  opacity: 1;
+  visibility:visible;
+  left: 20px;
+  color: #fff;
+ }
+ .card .content h2{
+  text-transform: uppercase;
+  font: 500 normal 2.5em/1em Poppins;
+ }
+ .card .content p{
+  text-transform: uppercase;
+  font: 400 normal 15px/17px Inter;
+ }
+ .card .content h3{
+  font: 500 normal 1.5em/1em Poppins;
+  margin-top: 12px;
+ }
+ .card .content .products{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  
+ }
+ .card .content .products>img{
+  cursor: pointer;
+ }
+ .card .content .products>img:hover{
+  filter: drop-shadow(0 0 10px #bbbaba) drop-shadow(0 0 60px #bbbaba );
+ }
